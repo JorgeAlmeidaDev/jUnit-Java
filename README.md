@@ -1,33 +1,27 @@
-Projeto testesjwt
-Este projeto é um exemplo de aplicação Spring Boot que demonstra a criação e recuperação de usuários.  
-Estrutura do Projeto
-O projeto está organizado da seguinte forma:  
+# Projeto testesjwt
+
+Este projeto é um exemplo de aplicação Spring Boot que demonstra a criação e recuperação de usuários.
+
+## Estrutura do Projeto
+
+O projeto está organizado da seguinte forma:
+
 src/main/java/com/jorginho/testesjwt/
-TestesJwtApplication.java
-User.java
-UserController.java
-UserService.java
+├── TestesJwtApplication.java
+├── User.java
+├── UserController.java
+└── UserService.java
 src/test/java/com/jorginho/testesjwt/
-UserIT.java
-Arquivos Principais
-TestesJwtApplication.java
+└── UserIT.java
+
+
+## Arquivos Principais
+
+### TestesJwtApplication.java
+
 Este é o ponto de entrada da aplicação Spring Boot.
 
-Projeto testesjwt
-Este projeto é um exemplo de aplicação Spring Boot que demonstra a criação e recuperação de usuários.  
-Estrutura do Projeto
-O projeto está organizado da seguinte forma:  
-src/main/java/com/jorginho/testesjwt/
-TestesJwtApplication.java
-User.java
-UserController.java
-UserService.java
-src/test/java/com/jorginho/testesjwt/
-UserIT.java
-Arquivos Principais
-TestesJwtApplication.java
-Este é o ponto de entrada da aplicação Spring Boot.
-
+```java
 package com.jorginho.testesjwt;
 
 import org.springframework.boot.SpringApplication;
@@ -41,15 +35,21 @@ public class TestesJwtApplication {
     }
 
 }
+
+Public code references from 5 repositories
 User.java
+
 Este arquivo define a classe User como um record, que é uma forma concisa de definir uma classe imutável.
+
 package com.jorginho.testesjwt;
 
 public record User(String nome, String password) {
 }
 
 UserController.java
+
 Este controlador expõe um endpoint para criar usuários.
+
 package com.jorginho.testesjwt;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,8 +70,11 @@ public class UserController {
     }
 }
 
+Public code references from 5 repositories
 UserService.java
+
 Este serviço contém a lógica de negócios para criar usuários.
+
 package com.jorginho.testesjwt;
 
 import org.springframework.stereotype.Service;
@@ -85,8 +88,13 @@ public class UserService {
         return users;
     }
 }
+
+Public code references from 5 repositories
+Testes
 UserIT.java
+
 Este é um teste de integração que verifica a criação e recuperação de usuários.
+
 package com.jorginho.testesjwt;
 
 import org.junit.jupiter.api.Test;
@@ -110,3 +118,18 @@ public class UserIT {
         User[] users = new User[]{restTemplate.postForObject("http://localhost:8080/users", user, User.class)};
     }
 }
+
+1 vulnerability detected
+
+Public code references from 5 repositories
+Como Executar
+
+Para executar o projeto, utilize os seguintes comandos:
+
+mvn clean install
+mvn spring-boot:run
+
+A aplicação estará disponível em http://localhost:8080.
+Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
